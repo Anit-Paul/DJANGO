@@ -8,5 +8,16 @@
 
 {% block content %}
     about content
+    {% for i in data %}
+    <div>
+        <img src="{{ i.image.url }}" alt="">
+        <h3>{{i.name}}</h3>
+        <h3>{{i.date}}</h3>
+        <h3>{{i.school}}</h3>
+    </div>
+{% endfor %}
 {% endblock content %}
+
+
+
     
