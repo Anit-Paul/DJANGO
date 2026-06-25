@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    details
+{% endblock title %}
+    
+
+{% block content %}
+    about content
+    {% for i in data %}
+    <div>
+        <h3>{{i.name}}</h3>
+        <h3>{{i.date}}</h3>
+        <h3>{{i.school}}</h3>
+    </div>
+{% endfor %}
+{% endblock content %}
+
+
+
+    
