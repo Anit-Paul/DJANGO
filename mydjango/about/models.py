@@ -11,3 +11,12 @@ class Student(models.Model):
     image=models.ImageField(upload_to='photos/')
     date=models.DateTimeField(default=timezone.now)
     school=models.CharField(max_length=2,choices=MY_SCHOOL)
+    
+    def __str__(self):
+        return self.name
+    
+class Review(models.Model):
+    student=models.ForeignKey(Student,on_delete=models.CASCADE,related_name='reviews')
+    details=models.CharField(max_length=100)
+    data_added=models.DateTimeField(default=timezone.now)
+    

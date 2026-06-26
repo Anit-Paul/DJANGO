@@ -20,5 +20,6 @@ from . import views
 
 urlpatterns = [
     path('', views.aboutAPI, name='about'),
-    path('<int:data_id>/', views.aboutDetailsAPI, name='aboutDetails')
+    path('<int:data_id>/', views.aboutDetailsAPI, name='aboutDetails'),
+    path('form/', views.formAPI, name='formAPI')
 ]

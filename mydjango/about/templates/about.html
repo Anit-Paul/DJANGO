@@ -1,23 +1,28 @@
 {% extends 'base.html' %}
 
-
 {% block title %}
-    about
+    Student Form
 {% endblock title %}
-    
 
 {% block content %}
-    about content
-    {% for i in data %}
-    <div>
-        <img src="{{ i.image.url }}" alt="">
-        <h3>{{i.name}}</h3>
-        <h3>{{i.date}}</h3>
-        <h3>{{i.school}}</h3>
+
+
+<h2>Student List</h2>
+
+{% for i in data %}
+    <div style="border:1px solid black; padding:15px; margin:15px 0;">
+        
+        <img src="{{ i.image.url }}" alt="{{ i.name }}" width="200">
+
+        <h3>Name : {{ i.name }}</h3>
+
+        <h4>School : {{ i.school }}</h4>
+
+        <h4>Date : {{ i.date }}</h4>
+
     </div>
+{% empty %}
+    <h3>No students found.</h3>
 {% endfor %}
+
 {% endblock content %}
-
-
-
-    

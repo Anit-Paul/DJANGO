@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Student Form
+{% endblock title %}
+
+{% block content %}
+
+<h2>Student Registration Form</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <div>
+        <label>Name</label><br>
+        <input type="text" name="name" required>
+    </div>
+
+    <br>
+
+    <div>
+        <label>Image</label><br>
+        <input type="file" name="image" required>
+    </div>
+
+    <br>
+
+    <div>
+        <label>School</label><br>
+
+        <select name="school" required>
+            <option value="">Select School</option>
+            <option value="AB">AB School</option>
+            <option value="BB">BB School</option>
+            <option value="CB">CB School</option>
+        </select>
+    </div>
+
+    <br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+{% endblock content %}
